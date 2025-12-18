@@ -1,24 +1,19 @@
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
-description: 'Sistema de Gestión de Motocicletas - Evaluación de Prompts'
+description: 'Getting started'
 
 env:
   GOOGLE_API_KEY: AIzaSyAcEYuvZb_91wEO_ODntR5JiXSiGzmQfaw
 
 prompts:
-  - Cual equipo portatil me debo comprar para programación si mi presupuesto es de {{presupuesto}} y me interesaria poder {{deseo}}?
+  - 'Cual equipo portatil me debo comprar para programación si me interesaria poder {{deseo}}?'
 
 providers:
-  - google:gemini-2.5-flash-tts
+  - "google:gemini-2.5-flash-lite"
 
 tests:
   # Tests para Registro
   - vars:
-      presupuesto: '1000 USD'
+      deseo: jugar
     assert:
-      - type: completion
-        value: 'portatil'
-  - vars:
-      deseo: 'jugar videojuegos'
-    assert:
-      - type: completion
+      - type: contains
         value: 'tarjeta grafica alta gama'
