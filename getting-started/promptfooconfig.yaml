@@ -5,110 +5,20 @@ env:
   GOOGLE_API_KEY: AIzaSyAcEYuvZb_91wEO_ODntR5JiXSiGzmQfaw
 
 prompts:
-  - file://prompts/registro.txt
-  - file://prompts/actualizacion.txt
-  - file://prompts/consulta.txt
-  - file://prompts/mantenimiento.txt
-  - file://prompts/diagnostico.txt
+  - Cual equipo portatil me debo comprar para programación si mi presupuesto es de {{presupuesto}} y me interesaria poder {{deseo}}?
 
 providers:
-  - google:gemini-2.5-flash
+  - google:gemini-2.5-flash-tts
 
 tests:
   # Tests para Registro
-  - description: "Registro completo de motocicleta"
-    vars:
-      marca: Yamaha
-      modelo: YZF-R3
-      año: 2021
-      cilindrada: 321 cc
-      kilometraje: 5000
-      aceite: Sintético
-      neumaticos: Michelin Pilot Street
-      valor: 5500.00
-      adicionales: Color azul
+  - vars:
+      presupuesto: '1000 USD'
     assert:
-      - type: icontains
-        value: confirmación
-      - type: icontains
-        value: registro
-  
-  - description: "Registro con datos faltantes"
-    vars:
-      marca: Honda
-      modelo: CBR500R
-      año: 2020
+      - type: completion
+        value: 'portatil'
+  - vars:
+      deseo: 'jugar videojuegos'
     assert:
-      - type: icontains
-        value: solicitar
-  
-  # Tests para Actualización
-  - description: "Actualización de kilometraje"
-    vars:
-      id: 12345
-      parametros: "Kilometraje Actual: 6000 km, Aceite: Semisintético"
-    assert:
-      - type: icontains
-        value: confirmación
-      - type: icontains
-        value: actualización
-  
-  - description: "Actualización con ID inválido"
-    vars:
-      id: -1
-      parametros: "Kilometraje: 5000"
-    assert:
-      - type: icontains
-        value: error
-  
-  # Tests para Consulta
-  - description: "Consulta de motocicleta existente"
-    vars:
-      id: 12345
-    assert:
-      - type: icontains
-        value: información
-  
-  # Tests para Mantenimiento
-  - description: "Programar mantenimiento"
-    vars:
-      id: 12345
-      tipo: Cambio de aceite
-      fecha: 2025-01-15
-      valor: 100.00
-      notas: Usar aceite sintético
-    assert:
-      - type: icontains
-        value: confirmación
-      - type: icontains
-        value: programado
-  
-  - description: "Mantenimiento con fecha pasada"
-    vars:
-      id: 12345
-      tipo: Cambio de aceite
-      fecha: 2020-01-15
-      valor: 100.00
-      notas: Fecha pasada
-    assert:
-      - type: icontains
-        value: error
-  
-  # Tests para Diagnóstico
-  - description: "Diagnóstico - Requiere atención inmediata"
-    vars:
-      id: 12345
-      consulta: Mi motocicleta está goteando aceite, ¿qué debo hacer?
-    assert:
-      - type: icontains
-        value: atención inmediata
-      - type: icontains
-        value: fuga
-  
-  - description: "Diagnóstico - Buen estado"
-    vars:
-      id: 12345
-      consulta: ¿Cuál es el estado general de mi motocicleta?
-    assert:
-      - type: regex
-        value: (buen estado|mantenimiento necesario|atención inmediata)
+      - type: completion
+        value: 'tarjeta grafica alta gama'

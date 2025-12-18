@@ -1,9 +1,0 @@
-Instrucción: Realiza una consulta personalizada sobre una motocicleta específica y clasifica la respuesta.
-
-Contexto: El sistema debe permitir al usuario realizar consultas específicas sobre la motocicleta y clasificar la respuesta en categorías predefinidas. La respuesta debe ser precisa, usando la información suministrada por el usuario, el historial y datos almacenados, así como también la información especifica del modelo. Si la motocicleta no existe, el sistema debe notificar al usuario. El ID de la motocicleta es obligatorio para realizar la consulta, y debe ser un número entero positivo. Las categorías de clasificación son: "Mantenimiento Necesario", "Buen Estado", "Requiere Atención Inmediata".
-
-Datos de entrada:
-- ID de la Motocicleta: {{id}}
-- Consulta: {{consulta}}
-
-Indicador de salida: Respuesta precisa a la consulta con clasificación, o notificación de inexistencia.

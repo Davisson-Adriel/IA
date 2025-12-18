@@ -1,8 +1,0 @@
-Instrucción: Consulta la información de una motocicleta específica en la base de datos.
-
-Contexto: El sistema debe recuperar y mostrar toda la información almacenada de la motocicleta, incluidos los datos adicionales. Si la motocicleta no existe, el sistema debe notificar al usuario. El ID de la motocicleta es obligatorio para realizar la consulta, y debe ser un número entero positivo.
-
-Datos de entrada:
-- ID de la Motocicleta: {{id}}
-
-Indicador de salida: Información completa de la motocicleta o notificación de inexistencia.
