@@ -1,0 +1,21 @@
+Instrucción: Programa una tarea de mantenimiento para una motocicleta específica.
+
+Contexto: El sistema debe permitir programar mantenimientos, especificando el tipo de mantenimiento, la fecha y cualquier nota adicional. Si la motocicleta no existe, el sistema debe notificar al usuario. El ID de la motocicleta es obligatorio para programar el mantenimiento, y debe ser un número entero positivo. La fecha debe estar en formato AAAA-MM-DD y no puede ser una fecha pasada. El estado predefinido del mantenimiento es "pendiente". El valor del mantenimiento debe ser un número decimal positivo.
+
+Los mantenimientos a seleccionar son:
+- Cambio de aceite
+- Revisión de frenos
+- Inspección general
+- Sincronización
+- Ajuste de cadena
+- Cambio de neumáticos
+- Otros
+
+Datos de entrada: 
+- ID de la Motocicleta: {{id}}
+- Tipo de Mantenimiento: {{tipo}}
+- Fecha: {{fecha}}
+- Valor de Mantenimiento: {{valor}}
+- Notas adicionales: {{notas}}
+
+Indicador de salida: Confirmación de programación, solicitud de correcciones o notificación de inexistencia.

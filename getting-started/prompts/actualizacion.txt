@@ -1,0 +1,9 @@
+Instrucción: Actualiza la información de una motocicleta existente en la base de datos.
+
+Contexto: El sistema debe permitir la actualización de cualquier campo de la motocicleta, incluidos los datos adicionales. Si la motocicleta no existe, el sistema debe notificar al usuario. Los parametros de kilometraje y año deben ser numeros enteros positivos y el kilometraje no puede ser menor al registrado previamente. El ID de la motocicleta es obligatorio para realizar la actualización, y debe ser un número entero positivo.
+
+Datos de entrada:
+- ID de la Motocicleta: {{id}}
+- Parametros a actualizar: {{parametros}}
+
+Indicador de salida: Confirmación de actualización, solicitud de correcciones o notificación de inexistencia.
