@@ -1,19 +1,104 @@
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
-description: 'Getting started'
+description: 'Tienda de Tecnología - Atención al Cliente'
 
 env:
-  GOOGLE_API_KEY: AIzaSyAcEYuvZb_91wEO_ODntR5JiXSiGzmQfaw
+  GOOGLE_API_KEY: 
 
 prompts:
-  - 'Cual equipo portatil me debo comprar para programación si me interesaria poder {{deseo}}?'
+    - 'Eres un asesor de ventas en una tienda de tecnología. Un cliente busca {{producto}} para {{uso}}. Recomiéndale la mejor opción explicando por qué.'
+    - 'Como vendedor experto en tecnología, ayuda a este cliente: necesita {{producto}} porque quiere {{uso}}. Dale una recomendación clara y amigable.'
 
 providers:
   - "google:gemini-2.5-flash-lite"
 
 tests:
-  # Tests para Registro
   - vars:
-      deseo: jugar
-    assert:
-      - type: contains
-        value: 'tarjeta grafica alta gama'
+      producto: una computadora portátil
+      uso: trabajar en diseño gráfico y edición de fotos
+  - vars:
+      producto: un teléfono celular
+      uso: tomar fotos de calidad profesional para redes sociales
+  - vars:
+      producto: una tablet
+      uso: leer libros y ver películas durante sus viajes
+  - vars:
+      producto: audífonos
+      uso: escuchar música con buena calidad de sonido en el gimnasio
+  - vars:
+      producto: un mouse y teclado
+      uso: trabajar desde casa de manera cómoda todo el día
+  - vars:
+      producto: una cámara web
+      uso: hacer videollamadas con mejor calidad para sus clases online
+  - vars:
+      producto: un monitor
+      uso: trabajar con varias ventanas abiertas y no cansarse la vista
+  - vars:
+      producto: un disco duro externo
+      uso: hacer respaldo de todas sus fotos familiares
+  - vars:
+      producto: una impresora
+      uso: imprimir tareas de sus hijos desde casa
+  - vars:
+      producto: un router wifi
+      uso: mejorar la señal de internet en toda su casa
+  - vars:
+      producto: una computadora de escritorio
+      uso: que sus hijos hagan tareas y jueguen ocasionalmente
+  - vars:
+      producto: una bocina bluetooth
+      uso: escuchar música en reuniones familiares al aire libre
+  - vars:
+      producto: un smartwatch
+      uso: monitorear su actividad física y recibir notificaciones
+  - vars:
+      producto: una laptop gamer
+      uso: jugar videojuegos modernos con buenos gráficos
+  - vars:
+      producto: un micrófono
+      uso: grabar podcast desde casa con buena calidad de audio
+  - vars:
+      producto: una consola de videojuegos
+      uso: entretenerse en familia los fines de semana
+  - vars:
+      producto: un cable HDMI
+      uso: conectar su laptop al televisor para ver películas
+  - vars:
+      producto: una memoria USB
+      uso: llevar documentos del trabajo a la casa y viceversa
+  - vars:
+      producto: un power bank
+      uso: cargar su celular cuando está fuera de casa todo el día
+  - vars:
+      producto: fundas y protectores
+      uso: proteger su celular nuevo de golpes y rayones
+  - vars:
+      producto: una silla gamer
+      uso: estar cómodo mientras trabaja largas horas frente a la computadora
+  - vars:
+      producto: luces LED
+      uso: decorar su espacio de streaming y hacer videos
+  - vars:
+      producto: un adaptador USB-C
+      uso: conectar varios dispositivos a su laptop nueva
+  - vars:
+      producto: un soporte para laptop
+      uso: mejorar su postura mientras trabaja desde casa
+  - vars:
+      producto: auriculares gamer
+      uso: escuchar bien a sus compañeros en los videojuegos online
+  - vars:
+      producto: una tarjeta de memoria
+      uso: ampliar el almacenamiento de su cámara fotográfica
+  - vars:
+      producto: un cargador rápido
+      uso: cargar su teléfono más rápido antes de salir de casa
+  - vars:
+      producto: un mouse pad grande
+      uso: tener más espacio para mover el mouse en sus juegos
+  - vars:
+      producto: una tableta gráfica
+      uso: hacer ilustraciones digitales como hobby
+  - vars:
+      producto: un control para juegos
+      uso: jugar en su PC con mayor comodidad que con teclado
